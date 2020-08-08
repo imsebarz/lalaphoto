@@ -113,7 +113,7 @@ ul {
   background-size: cover;
   background-position-x: center;
   transform: translateY(-20px) translateX(-10vw);
-  height: 45em;
+  height: 42em;
   width: 0;
   opacity: 1;
   transition: 0.5s ease;
@@ -164,6 +164,9 @@ ul {
   background: rgba(0, 0, 0, 0.8);
   padding: 0 10px;
   display: flex;
+  width: 35%;
+  height: 10%;
+  z-index: 1;
   flex-direction: row;
 }
 
@@ -178,12 +181,18 @@ ul {
 }
 
 .info i {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .info ul {
   display: flex;
   flex-direction: row;
+  width: 100%;
+}
+
+.info ul a {
+  color: white;
+  text-decoration: none;
 }
 
 .profiletext {
