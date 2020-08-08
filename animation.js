@@ -7,13 +7,14 @@ const lala = document.querySelector(".lala");
 const imgwrapper = document.querySelector(".img-wrapper");
 const swipercontainer = document.querySelector(".swiper-container");
 const info = document.querySelector(".info");
-const name = document.querySelector(".name");
+const infouls = document.querySelectorAll(".info ul");
 const clickme = document.querySelector(".clickme");
 const heroname = document.querySelector(".text h1");
 const herodescription = document.querySelector(".text p");
 const navlinks = document.querySelectorAll(".bottomnav ul li");
 const logo = document.querySelector(".nav .logo");
 const proyectos = document.querySelector(".proyects");
+const profiletext = document.querySelector(".profiletext");
 const proyectoslinks = document.querySelectorAll(".proyects ul li");
 const textlist = document.querySelectorAll(".text ul");
 
@@ -30,7 +31,7 @@ TweenMax.fromTo(
   }
 );
 
-TweenMax.to(lala, 1, { delay: 0.6, width: "850px", ease: Power2.easeInOut });
+TweenMax.to(lala, 1, { delay: 0.6, width: "60vw", ease: Power2.easeInOut });
 
 navlinks[1].classList.add("navactive");
 proyectoslinks[0].classList.add("proyectactive");
@@ -53,58 +54,25 @@ TweenMax.staggerFrom(
 );
 
 TweenMax.from(info, 2, { delay: 1.5, y: 100, ease: Circ.easeInOut });
-TweenMax.from(name, 2, { delay: 1.5, x: -600, ease: Circ.easeInOut });
 
 lala.addEventListener("click", () => {
+  navlinks[1].classList.add("navactive");
+  navlinks[0].classList.remove("navactive");
+  navlinks[2].classList.remove("navactive");
   TweenMax.to(heroname, 1, { x: 1000, ease: Circ.easeInOut });
   TweenMax.to(herodescription, 1, {
     delay: 0.2,
     x: 1000,
     ease: Circ.easeInOut,
   });
-  TweenMax.to(name, 1, { delay: 0.3, x: -1000, ease: Circ.easeInOut });
-  TweenMax.to(lala, 1, {
-    delay: 0.8,
-    y: -50,
-    scale: 0.9,
-    ease: Circ.easeInOut,
-  });
+
   lala.style.cursor = "grab";
 
-  lala.classList.remove("lala");
-  lala.classList.add("lalasinhover");
-
-  // Aqui se añade el eventListener de click para el logo, sino, no hace nada
-
-  logo.addEventListener("click", () => {
-    TweenMax.to(heroname, 1, { x: 0, ease: Circ.easeInOut });
-    TweenMax.to(herodescription, 1, {
-      delay: 0.2,
-      x: 0,
-      ease: Circ.easeInOut,
-    });
-    TweenMax.to(name, 1, { delay: 0.3, x: 0, ease: Circ.easeInOut });
-    TweenMax.to(lala, 1, { delay: 0.1, y: 0, scale: 1, ease: Power2 });
-    TweenMax.to(proyectos, 1, { delay: 0.3, x: 1000, ease: Circ.easeInOut });
-    lala.classList.add("lala");
-    lala.classList.remove("lalasinhover");
-    lala.style.cursor = "none";
-    TweenMax.to(lala, 1, { delay: 0.1, x: -80, y: -30, ease: Power2 });
-    TweenMax.fromTo(
-      swipercontainer,
-      1,
-      {
-        x: 100,
-        ease: Power2,
-      },
-      {
-        x: -1200,
-        ease: Circ.easeInOut,
-      }
-    );
+  TweenMax.to(profiletext, 1, {
+    delay: 0.2,
+    opacity: 0,
+    ease: Circ.easeInOut,
   });
-
-  // ------------------------------- EventListener Logo --------------------
 
   TweenMax.to(textlist, 1, {
     delay: 0.3,
@@ -124,10 +92,10 @@ lala.addEventListener("click", () => {
       ease: Circ.easeInOut,
     }
   );
-  TweenMax.to(lala, 1, {
-    delay: 0.3,
+  TweenMax.to(lala, 0.5, {
+    delay: 0.1,
     x: -1200,
-    ease: Circ.easeInOut,
+    ease: Power2.easeInOut,
   });
 
   TweenMax.fromTo(
@@ -138,6 +106,60 @@ lala.addEventListener("click", () => {
       x: 0,
     }
   );
+  proyectos.style.display = "block";
+});
+
+logo.addEventListener("click", () => {
+  navlinks[1].classList.add("navactive");
+  navlinks[0].classList.remove("navactive");
+  navlinks[2].classList.remove("navactive");
+
+  TweenMax.to(heroname, 1, { x: 0, y: 0, ease: Circ.easeInOut });
+  TweenMax.to(herodescription, 1, {
+    delay: 0.2,
+    x: 0,
+    y: 0,
+    ease: Circ.easeInOut,
+  });
+  TweenMax.to(lala, 1, { delay: 0.1, y: 0, scale: 1, ease: Power2 });
+  TweenMax.to(proyectos, 1, { delay: 0.3, x: 1000, ease: Circ.easeInOut });
+  lala.style.cursor = "none";
+  TweenMax.to(lala, 1, { delay: 0.1, x: -80, y: -30, ease: Power2 });
+  TweenMax.to(swipercontainer, 1, {
+    x: -1200,
+  });
+  clickme.textContent = "Click me";
+  proyectos.style.display = "none";
+  TweenMax.to(profiletext, 1, {
+    delay: 0.2,
+    opacity: 0,
+    ease: Circ.easeInOut,
+  });
+});
+
+navlinks[1].addEventListener("click", () => {
+  navlinks[1].classList.add("navactive");
+  TweenMax.to(heroname, 1, { x: 0, y: 0, ease: Circ.easeInOut });
+  TweenMax.to(herodescription, 1, {
+    delay: 0.2,
+    x: 0,
+    y: 0,
+    ease: Circ.easeInOut,
+  });
+  TweenMax.to(lala, 1, { delay: 0.1, y: 0, scale: 1, ease: Power2 });
+  TweenMax.to(proyectos, 1, { delay: 0.3, x: 1000, ease: Circ.easeInOut });
+  lala.style.cursor = "none";
+  TweenMax.to(lala, 1, { delay: 0.1, x: -80, y: -30, ease: Power2 });
+  TweenMax.to(swipercontainer, 1, {
+    x: -1200,
+  });
+  clickme.textContent = "Click me";
+  proyectos.style.display = "none";
+  TweenMax.to(profiletext, 1, {
+    delay: 0.2,
+    opacity: 0,
+    ease: Circ.easeInOut,
+  });
 });
 
 const swiper = new Swiper(".swiper-container", {
@@ -157,6 +179,7 @@ lala.addEventListener("mousemove", (e) => {
   clickme.style.opacity = 1;
   clickme.style.left = pageX;
   clickme.style.top = pageY;
+  clickme.textContent = "Click me";
 });
 
 lala.addEventListener("mouseout", (e) => {
@@ -169,7 +192,7 @@ swipercontainer.addEventListener("mousemove", (e) => {
   clickme.style.opacity = 1;
   clickme.style.left = pageX;
   clickme.style.top = pageY;
-  clickme.textContent = "Double click";
+  clickme.textContent = "Zoom me!";
 });
 
 swipercontainer.addEventListener("mouseout", (e) => {
@@ -200,14 +223,89 @@ navlinks.forEach((link) => {
       link.classList.remove("navactive");
     });
     link.classList.add("navactive");
-    checkActive();
   });
 });
 
-const checkActive = () => {
-  if (navlinks[1].classList.contains("navactive")) {
-    logo.style.pointerEvents = "none";
-  } else {
-    logo.style.pointerEvents = "auto";
-  }
+navlinks[0].addEventListener("click", () => {
+  TweenMax.to(lala, 0.5, {
+    delay: 0.1,
+    x: -200,
+    width: "750px",
+    ease: Power2.easeInOut,
+  });
+  TweenMax.to(proyectos, 1, { delay: 0.3, x: 1000, ease: Circ.easeInOut });
+  TweenMax.to(swipercontainer, 1, {
+    x: -1200,
+  });
+
+  TweenMax.to(heroname, 1, { x: 0, y: -200, ease: Circ.easeInOut });
+  TweenMax.to(herodescription, 1, {
+    delay: 0.2,
+    y: 500,
+    x: 0,
+    ease: Circ.easeInOut,
+  });
+  TweenMax.to(profiletext, 1, {
+    delay: 0.2,
+    opacity: 1,
+    ease: Circ.easeInOut,
+  });
+  profiletext.style.display = "block";
+  proyectos.style.display = "none";
+});
+
+infouls[1].style.display = "none";
+navlinks[2].addEventListener("click", () => {
+  TweenMax.to(info, 1, {
+    delay: 0.2,
+    height: "15em",
+    width: "40em",
+    ease: Circ.easeInOut,
+  });
+  TweenMax.fromTo(
+    infouls[0],
+    2,
+    {
+      ease: Circ.easeInOut,
+      flexDirection: "row",
+    },
+    {
+      delay: 0.5,
+      ease: Circ.easeInOut,
+      flexDirection: "column",
+      display: "block",
+    }
+  );
+  TweenMax.fromTo(
+    infouls[1],
+    2,
+    {
+      ease: Circ.easeInOut,
+      flexDirection: "row",
+    },
+    {
+      delay: 0.5,
+      ease: Circ.easeInOut,
+      flexDirection: "column",
+      display: "block",
+    }
+  );
+});
+
+const cerrarinfo = () => {
+  TweenMax.to(info, 1, {
+    delay: 0.2,
+    height: "auto",
+    width: "auto",
+    ease: Circ.easeInOut,
+  });
+  TweenMax.to(infouls[0], 2, {
+    delay: 0.5,
+    ease: Circ.easeInOut,
+    display: "block",
+  });
+  TweenMax.to(infouls[1], 2, {
+    ease: Circ.easeInOut,
+    display: "none",
+  });
 };
