@@ -51,14 +51,27 @@ lalaTl
     },
     "-=0.8"
   )
-  .to(
-    ".profiletext",
+  // .to(
+  //   ".profiletext",
+  //   1,
+  //   {
+  //     opacity: 0,
+  //     display: "none",
+  //     ease: Circ.easeInOut,
+  //   },
+  //   "-=1.4"
+  // )
+  .fromTo(
+    proyectos,
     1,
+    { x: 1200, ease: Circ.easeInOut },
     {
-      opacity: 0,
-      ease: Circ.easeInOut,
+      x: 0,
+      onComplete: () => {
+        proyectos.style.display = "block";
+      },
     },
-    "-=1.4"
+    "-=1"
   )
   .to(
     ".text ul",
@@ -92,18 +105,6 @@ lalaTl
       },
     },
     "-=0.5"
-  )
-  .fromTo(
-    proyectos,
-    1,
-    { x: 1200, ease: Circ.easeInOut },
-    {
-      x: 0,
-      onComplete: () => {
-        proyectos.style.display = "block";
-      },
-    },
-    "-=1"
   );
 
 profileTl
