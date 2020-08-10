@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Raiderfont";
-  src: local("Raiderfont"), url("./fonts/Raiderfont.ttf") format("truetype");
+  src: local("Raiderfont"), url("/src/assets/fonts/Raiderfont.ttf") format("truetype");
 }
 
 * {
@@ -71,15 +71,6 @@ ul {
   font-size: 2em;
 }
 
-.img-wrapper {
-  position: absolute;
-  bottom: 0;
-  left: 180px;
-  z-index: 0;
-  background-size: cover;
-  cursor: none;
-}
-
 .swiper-container {
   width: 1000px;
   height: 600px;
@@ -89,6 +80,7 @@ ul {
   cursor: grab;
   z-index: -10;
 }
+
 .swiper-slide {
   background-position: center;
   background-size: cover;
@@ -97,19 +89,29 @@ ul {
   overflow: hidden;
 }
 
-.swiper-slide-shadow-left {
-  display: none;
-}
-
 .swiper-slide .swiper-slide-shadow-right {
   display: none;
 }
-.swiper-wrapper {
+
+.swiper-slide .swiper-slide-shadow-left {
+  display: none;
+}
+
+.swiper-slide .swiper-wrapper {
   z-index: -10;
 }
 
+.img-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 180px;
+  z-index: 0;
+  background-size: cover;
+  cursor: none;
+}
+
 .img-wrapper .lala {
-  background-image: url("./img/lalita.jpeg");
+  background-image: url("/src/assets/img/lalita.jpeg");
   background-size: cover;
   background-position-x: center;
   transform: translateY(-20px) translateX(-10vw);
@@ -121,13 +123,18 @@ ul {
 }
 
 .img-wrapper .lalasinhover {
-  background-image: url("./img/lalita.jpeg");
+  background-image: url("/src/assets/img/lalita.jpeg");
   background-size: cover;
   transform: translateY(-20px) translateX(-100px);
   height: 500px;
   width: 0;
   opacity: 1;
   transition: 0.5s ease;
+}
+
+.img-wrapper .lala:hover {
+  filter: contrast(0.7);
+  cursor: none;
 }
 
 .clickme {
@@ -152,11 +159,6 @@ ul {
   z-index: 5;
 }
 
-.img-wrapper .lala:hover {
-  filter: contrast(0.7);
-  cursor: none;
-}
-
 .info {
   position: absolute;
   bottom: 0;
@@ -170,6 +172,12 @@ ul {
   flex-direction: row;
 }
 
+.info ul {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
 .info ul li {
   display: inline-block;
   padding: 20px 25px;
@@ -180,19 +188,13 @@ ul {
   font-weight: 600;
 }
 
-.info i {
-  font-size: 20px;
-}
-
-.info ul {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
 .info ul a {
   color: white;
   text-decoration: none;
+}
+
+.info i {
+  font-size: 20px;
 }
 
 .profiletext {
@@ -234,8 +236,13 @@ ul {
   display: none;
 }
 
+.text ul li:hover {
+  text-shadow: 0 0 1px white;
+  cursor: pointer;
+}
+
 .proyectactive {
-  text-shadow: 0 0 1px rgba(255, 255, 255, 1);
+  text-shadow: 0 0 1px white;
 }
 
 .navactive {
@@ -253,11 +260,6 @@ ul {
   text-align: end;
 }
 
-.text ul li:hover {
-  text-shadow: 0 0 1px rgba(255, 255, 255, 1);
-  cursor: pointer;
-}
-
 .bottomnav {
   position: absolute;
   bottom: 50px;
@@ -271,3 +273,4 @@ ul {
   letter-spacing: 15px;
   margin-top: 20px;
 }
+/*# sourceMappingURL=style.css.map */

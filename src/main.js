@@ -83,5 +83,6 @@ proyectoslinks.forEach((link) => {
         </div>`
       );
     }
+    swipercontainer.swiper.update();
   });
 });

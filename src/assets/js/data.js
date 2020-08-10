@@ -1,13 +1,13 @@
 const proyects = {
   Street: {
-    basesrc: "./img/proyect",
+    basesrc: "src/assets/img/proyect",
     1: "/photo1.jpg",
     2: "/photo2.jpg",
     3: "/photo3.jpg",
     4: "/photo4.jpg",
   },
   Petals: {
-    basesrc: "./img/proyect2",
+    basesrc: "src/assets/img/proyect2",
     1: "/photo1.jpg",
     2: "/photo2.jpg",
     3: "/photo3.jpg",
@@ -16,14 +16,14 @@ const proyects = {
     6: "/photo6.jpg",
   },
   Daisy: {
-    basesrc: "./img/proyect",
+    basesrc: "src/assets/img/proyect",
     1: "/photo1.jpg",
     2: "/photo2.jpg",
     3: "/photo3.jpg",
     4: "/photo4.jpg",
   },
   Surrealism: {
-    basesrc: "./img/proyect2",
+    basesrc: "src/assets/img/proyect2",
     1: "/photo1.jpg",
     2: "/photo2.jpg",
     3: "/photo3.jpg",
@@ -31,7 +31,7 @@ const proyects = {
   },
 
   Portraits: {
-    basesrc: "./img/proyect",
+    basesrc: "src/assets/img/proyect",
     1: "/photo1.jpg",
     2: "/photo2.jpg",
     3: "/photo3.jpg",
@@ -39,7 +39,7 @@ const proyects = {
   },
 
   Things: {
-    basesrc: "./img/proyect2",
+    basesrc: "src/assets/img/proyect2",
     1: "/photo1.jpg",
     2: "/photo2.jpg",
     3: "/photo3.jpg",
