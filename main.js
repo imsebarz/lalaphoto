@@ -6,11 +6,10 @@ logo.addEventListener("click", () => {
   tl.restart().timeScale(1.2);
   if (lalaTl.progress() == 1) {
     lalaTl.reverse();
-  } else if (profileTl.progress() == 1) {
+  }
+  if (profileTl.progress() == 1) {
     profileTl.reverse();
   }
-  lalaTl.reverse();
-  console.log(profileTl.reversed());
   lala.style.cursor = "none";
   lala.addEventListener("click", lalaclick);
   lala.addEventListener("mousemove", mousemove);
