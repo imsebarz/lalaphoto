@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Raiderfont";
-  src: local("Raiderfont"), url("/src/assets/fonts/Raiderfont.ttf") format("truetype");
+  src: local("Raiderfont"), url("../src/assets/fonts/Raiderfont.ttf") format("truetype");
 }
 
 * {
