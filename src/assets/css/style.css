@@ -111,7 +111,7 @@ ul {
 }
 
 .img-wrapper .lala {
-  background-image: url("./assets/img/lalita.jpeg");
+  background-image: url("/src/assets/img/lalita.jpeg");
   background-size: cover;
   background-position-x: center;
   transform: translateY(-20px) translateX(-10vw);
@@ -123,7 +123,7 @@ ul {
 }
 
 .img-wrapper .lalasinhover {
-  background-image: url("./assets/img/lalita.jpeg");
+  background-image: url("/src/assets/img/lalita.jpeg");
   background-size: cover;
   transform: translateY(-20px) translateX(-100px);
   height: 500px;
