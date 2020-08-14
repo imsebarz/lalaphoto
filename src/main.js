@@ -86,3 +86,13 @@ proyectoslinks.forEach((link) => {
     swipercontainer.swiper.update();
   });
 });
+
+themebutton.addEventListener("click", () => {
+  lala.style.transition = "none";
+  logo.style.transition = "none";
+  html.classList.toggle("darkmode");
+  setTimeout(() => {
+    lala.style.transition = "0.5s ease";
+    logo.style.transition = "0.4s ease";
+  });
+});

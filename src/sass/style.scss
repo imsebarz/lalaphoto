@@ -10,6 +10,21 @@
   box-sizing: border-box;
 }
 
+html.darkmode {
+  img,
+  .lala,
+  .clickme,
+  .left,
+  .logo {
+    filter: invert(100%);
+  }
+  filter: invert(100%);
+  img:hover,
+  .lala:hover {
+    filter: invert(100%);
+  }
+}
+
 body {
   font-family: "Montserrat";
   font-size: 12px;
@@ -22,10 +37,16 @@ ul {
   list-style: none;
 }
 
-.left,
 .right {
   position: absolute;
-  width: 50%;
+  width: 70%;
+  height: 100%;
+  z-index: -1;
+}
+
+.left {
+  position: absolute;
+  width: 30%;
   height: 100%;
   z-index: -1;
 }
@@ -45,7 +66,7 @@ ul {
 .nav {
   ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
     padding: 0 20px;
@@ -60,7 +81,6 @@ ul {
     }
   }
   .logo {
-    flex: 1;
     font-size: 18px;
     letter-spacing: 0;
     transition: 0.3s ease;

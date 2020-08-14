@@ -3,8 +3,8 @@ const lalaTl = new TimelineMax({ paused: true });
 const profileTl = new TimelineMax({ paused: true });
 const contactTl = new TimelineMax({ paused: true });
 
-tl.to(".right", 1, { width: "50%", ease: Power3.easeInOut })
-  .to(".left", 1, { width: "50%", ease: Power2.easeInOut }, "-=0.8")
+tl.to(".right", 1, { width: "70%", ease: Power3.easeInOut })
+  .to(".left", 1, { width: "30%", ease: Power2.easeInOut }, "-=0.8")
   .from(".nav", 1, { opacity: 0, ease: Expo.easeInOut }, "-=0.8")
   .from(".text h1", 2, { x: 1000, ease: Circ.easeInOut }, "-=2")
   .to(".lala", 1, { width: "60vw", ease: Power2.easeInOut }, "-=1.8")
