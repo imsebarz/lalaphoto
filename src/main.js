@@ -2,28 +2,34 @@ lala.addEventListener("click", lalaclick);
 
 // -------------------- logo onClick listener  -----------------------------------
 
-logo.addEventListener("click", () => {
-  tl.restart().timeScale(1.2);
-  if (lalaTl.progress() == 1) {
-    lalaTl.reverse();
-  }
-  if (profileTl.progress() == 1) {
-    profileTl.reverse();
-  }
-  lala.style.cursor = "none";
-  lala.addEventListener("click", lalaclick);
-  lala.addEventListener("mousemove", mousemove);
-  navlinks[1].classList.add("navactive");
-  navlinks[0].classList.remove("navactive");
-  navlinks[2].classList.remove("navactive");
+logo.forEach((el) => {
+  el.addEventListener("click", () => {
+    tl.restart().timeScale(1.2);
+    if (lalaTl.progress() == 1) {
+      lalaTl.reverse();
+    }
+    if (profileTl.progress() == 1) {
+      profileTl.reverse();
+    }
+    lala.style.cursor = "none";
+    lala.addEventListener("click", lalaclick);
+    lala.addEventListener("mousemove", mousemove);
+    navlinks[1].classList.add("navactive");
+    navlinks[0].classList.remove("navactive");
+    navlinks[2].classList.remove("navactive");
+  });
 });
 
-navlinks[1].addEventListener("click", () => {
-  navlinks[1].classList.add("navactive");
-  profileTl.reverse();
-  lala.addEventListener("click", lalaclick);
-  lala.addEventListener("mousemove", mousemove);
-  lala.style.cursor = "none";
+const portfolios = [navlinks[1], portfolioside];
+
+portfolios.forEach((item) => {
+  item.addEventListener("click", () => {
+    navlinks[1].classList.add("navactive");
+    profileTl.reverse();
+    lala.addEventListener("click", lalaclick);
+    lala.addEventListener("mousemove", mousemove);
+    lala.style.cursor = "none";
+  });
 });
 
 lala.addEventListener("mousemove", mousemove);
@@ -46,14 +52,18 @@ swipercontainer.addEventListener("mouseout", (e) => {
 
 infouls[1].style.display = "none";
 
-navlinks[0].addEventListener("click", () => {
-  profileTl.play();
-  lala.removeEventListener("click", lalaclick);
-  lala.removeEventListener("mousemove", mousemove);
-  profiletext.style.display = "block";
-  proyectos.style.display = "none";
-  lala.style.cursor = "default";
-  navlinks[0].classList.add("navactive");
+profiles = [navlinks[0], profileside];
+
+profiles.forEach((item) => {
+  item.addEventListener("click", () => {
+    profileTl.play();
+    lala.removeEventListener("click", lalaclick);
+    lala.removeEventListener("mousemove", mousemove);
+    profiletext.style.display = "block";
+    proyectos.style.display = "none";
+    lala.style.cursor = "default";
+    navlinks[0].classList.add("navactive");
+  });
 });
 
 navlinks[2].addEventListener("click", () => {
@@ -87,12 +97,14 @@ proyectoslinks.forEach((link) => {
   });
 });
 
-themebutton.addEventListener("click", () => {
-  lala.style.transition = "none";
-  logo.style.transition = "none";
-  html.classList.toggle("darkmode");
-  setTimeout(() => {
-    lala.style.transition = "0.5s ease";
-    logo.style.transition = "0.4s ease";
+themebutton.forEach((item) => {
+  item.addEventListener("click", () => {
+    lala.style.transition = "none";
+    logo[0].style.transition = "none";
+    html.classList.toggle("darkmode");
+    setTimeout(() => {
+      lala.style.transition = "0.5s ease";
+      logo[0].style.transition = "0.4s ease";
+    });
   });
 });

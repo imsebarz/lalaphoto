@@ -4,9 +4,13 @@ const infouls = document.querySelectorAll(".info ul");
 const clickme = document.querySelector(".clickme");
 const navlinks = document.querySelectorAll(".bottomnav ul li");
 const proyectos = document.querySelector(".proyects");
-const logo = document.querySelector(".nav .logo");
-const themebutton = document.querySelector(".nav .theme");
+const themebutton = document.querySelectorAll(".theme");
 const profiletext = document.querySelector(".profiletext");
-const right = document.querySelector(".right");
 const html = document.querySelector("html");
 const proyectoslinks = document.querySelectorAll(".proyects ul li");
+let breakpoint = window.matchMedia("(max-width: 900px)");
+const logo = document.querySelectorAll(".logo");
+const profileside = document.querySelector(".nav-item.profile");
+const portfolioside = document.querySelector(".nav-item.portfolio");
+
+console.log("portfolio es", portfolioside);

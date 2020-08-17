@@ -6,6 +6,7 @@ const contactTl = new TimelineMax({ paused: true });
 tl.to(".right", 1, { width: "70%", ease: Power3.easeInOut })
   .to(".left", 1, { width: "30%", ease: Power2.easeInOut }, "-=0.8")
   .from(".nav", 1, { opacity: 0, ease: Expo.easeInOut }, "-=0.8")
+  .from(".sidemenu", 1, { x: 100, ease: Circ.easeInOut }, "-=1.2")
   .from(".text h1", 2, { x: 1000, ease: Circ.easeInOut }, "-=2")
   .to(".lala", 1, { width: "60vw", ease: Power2.easeInOut }, "-=1.8")
   .from(
@@ -35,6 +36,7 @@ tl.to(".right", 1, { width: "70%", ease: Power3.easeInOut })
       onComplete: () => {
         navlinks[1].classList.add("navactive");
         proyectoslinks[0].classList.add("proyectactive");
+        responsiveInit();
       },
     },
     "-=2.5"
@@ -51,16 +53,6 @@ lalaTl
     },
     "-=0.8"
   )
-  // .to(
-  //   ".profiletext",
-  //   1,
-  //   {
-  //     opacity: 0,
-  //     display: "none",
-  //     ease: Circ.easeInOut,
-  //   },
-  //   "-=1.4"
-  // )
   .fromTo(
     proyectos,
     1,
@@ -102,6 +94,7 @@ lalaTl
       ease: Circ.easeInOut,
       onComplete: () => {
         lala.style.cursor = "grab";
+        responsiveInit();
       },
     },
     "-=0.5"
@@ -146,8 +139,8 @@ contactTl
       background: "rgba(0, 0, 0, 0.8)",
     },
     {
-      height: "30%",
-      width: "35%",
+      height: "8vw",
+      width: "38%",
       ease: Circ.easeInOut,
       zIndex: 10,
       background: "rgba(0, 0, 0, 0.9)",
@@ -172,6 +165,7 @@ contactTl
       ease: Circ.easeInOut,
       flexDirection: "column",
       display: "block",
+
       onStart: () => {
         window.addEventListener("click", quit);
       },
