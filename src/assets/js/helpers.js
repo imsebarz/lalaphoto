@@ -13,7 +13,18 @@ function lalaclick() {
   navlinks[2].classList.remove("navactive");
   lalaTl.play();
   createswiper();
+  if (breakpoint.matches) {
+    text.style.display = "none";
+  }
 }
+
+const posLala = () => {
+  if (breakpoint.matches) {
+    return -1000;
+  } else {
+    return -200;
+  }
+};
 
 function loadImage(url) {
   return new Promise((resolve, reject) => {

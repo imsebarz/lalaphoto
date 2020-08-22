@@ -102,7 +102,7 @@ lalaTl
 
 profileTl
   .to(lala, 0.5, {
-    x: -200,
+    x: posLala,
     width: "750px",
     ease: Power2.easeInOut,
   })

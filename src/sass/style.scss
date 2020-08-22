@@ -10,7 +10,12 @@
   box-sizing: border-box;
 }
 
-body {
+html {
+  height: 100vh;
+}
+
+.content {
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -33,7 +38,7 @@ html.darkmode {
 body {
   font-family: "Montserrat";
   font-size: 12px;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
@@ -307,7 +312,7 @@ ul {
 
 .sidemenu {
   position: fixed;
-  width: 10vw;
+  width: 14vw;
   right: 0%;
   height: 100vh;
   background: #972c54;
@@ -333,16 +338,12 @@ ul {
   }
 }
 
-.sidemenu:hover .logo i {
-  transform: rotate(-180deg);
-}
-
 .sidemenu-nav {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
 }
@@ -361,30 +362,18 @@ ul {
   height: 5rem;
   text-decoration: none;
   color: white;
+  justify-content: center;
   i {
     margin: 0 1.5vw;
     font-size: 5vw;
   }
 }
 
-.link-text {
-  display: none;
-  margin-right: 1rem;
-}
-
-.sidemenu:hover {
-  width: 30vw;
-}
-
-.sidemenu:hover .link-text {
-  display: block;
-}
-
 //  ------------------- Media Query ----------------------
 
 @media screen and (max-width: 900px) {
   .text {
-    top: 60%;
+    top: 100vw - 10vw;
     left: 3%;
     width: fit-content;
     h1 {
@@ -399,16 +388,19 @@ ul {
     display: none;
   }
   .lala {
-    width: 70vw !important;
+    width: 65vw !important;
   }
   .nav {
     display: none;
   }
 
   .clickme {
-    left: 180px !important;
-    top: 250px !important;
+    left: 250px !important;
+    top: 220px !important;
     opacity: 1 !important;
+    width: 30px;
+    height: 30px;
+    font-size: 8px;
   }
 
   .proyects {
@@ -420,7 +412,33 @@ ul {
   }
 
   .swiper-container {
-    width: 70%;
-    height: 60em;
+    width: 80%;
+    height: 50em;
+    margin-right: 5em !important;
+  }
+
+  .img-wrapper {
+    left: 20%;
+    .lala {
+      transform: translateX(10vw) translateY(-17vh);
+    }
+  }
+
+  body {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .profiletext {
+    width: 70vw;
+    font-size: 16px;
+    left: 10%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .text {
+    display: block !important;
   }
 }

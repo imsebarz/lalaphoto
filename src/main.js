@@ -14,6 +14,8 @@ logo.forEach((el) => {
     lala.style.cursor = "none";
     lala.addEventListener("click", lalaclick);
     lala.addEventListener("mousemove", mousemove);
+    text.style.display = "block";
+    clickme.style.display = "flex";
     navlinks[1].classList.add("navactive");
     navlinks[0].classList.remove("navactive");
     navlinks[2].classList.remove("navactive");
@@ -29,6 +31,7 @@ portfolios.forEach((item) => {
     lala.addEventListener("click", lalaclick);
     lala.addEventListener("mousemove", mousemove);
     lala.style.cursor = "none";
+    clickme.style.display = "flex";
   });
 });
 
@@ -63,6 +66,11 @@ profiles.forEach((item) => {
     proyectos.style.display = "none";
     lala.style.cursor = "default";
     navlinks[0].classList.add("navactive");
+    clickme.style.display = "none";
+    text.style.display = "block";
+    if (breakpoint.matches) {
+      text.style.left = "10%";
+    }
   });
 });
 
