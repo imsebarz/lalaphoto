@@ -373,7 +373,7 @@ ul {
 
 @media screen and (max-width: 900px) {
   .text {
-    top: 100vw - 10vw;
+    top: 60vh;
     left: 3%;
     width: fit-content;
     h1 {
@@ -419,6 +419,8 @@ ul {
 
   .img-wrapper {
     left: 20%;
+    height: 60%;
+    top: 35vh;
     .lala {
       transform: translateX(10vw) translateY(-17vh);
     }
