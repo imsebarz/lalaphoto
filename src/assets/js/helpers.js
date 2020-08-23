@@ -15,6 +15,7 @@ function lalaclick() {
   createswiper();
   if (breakpoint.matches) {
     text.style.display = "none";
+    clickme.style.display = "none";
   }
 }
 
