@@ -25,15 +25,19 @@ logo.forEach((el) => {
 const portfolios = [navlinks[1], portfolioside];
 
 portfolios.forEach((item) => {
-  item.addEventListener("click", () => {
-    navlinks[1].classList.add("navactive");
-    profileTl.reverse();
-    lala.addEventListener("click", lalaclick);
-    lala.addEventListener("mousemove", mousemove);
-    lala.style.cursor = "none";
-    clickme.style.display = "flex";
-  });
+  item.addEventListener("click", lalaclick);
 });
+
+// portfolios.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     navlinks[1].classList.add("navactive");
+//     profileTl.reverse();
+//     lala.addEventListener("click", lalaclick);
+//     lala.addEventListener("mousemove", mousemove);
+//     lala.style.cursor = "none";
+//     clickme.style.display = "flex";
+//   });
+// });
 
 lala.addEventListener("mousemove", mousemove);
 lala.addEventListener("mouseout", (e) => {

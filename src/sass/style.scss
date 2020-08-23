@@ -93,17 +93,25 @@ ul {
     }
   }
   .logo {
-    font-size: 18px;
+    font-size: 1.5vw;
     letter-spacing: 0;
-    transition: 0.3s ease;
+    transition: 0.2s ease;
   }
-  .hamburguer {
-    display: none;
+
+  .theme {
+    font-size: 2.5vw;
+    margin-top: 0.5em;
+    transition: all 0.1s ease;
+    transform-origin: top(50%) left(50%);
   }
 
   .logo:hover {
     cursor: pointer;
-    font-size: 2em;
+    font-size: 2vw;
+  }
+
+  .theme:hover {
+    transform: rotate(360deg);
   }
 }
 
@@ -228,7 +236,7 @@ ul {
     }
   }
   i {
-    font-size: 0.8vw;
+    font-size: 1vw;
   }
 }
 
@@ -416,7 +424,7 @@ ul {
   .swiper-container {
     width: 80%;
     height: 50em;
-    margin-right: 5em !important;
+    margin-right: 16vw !important;
   }
 
   .img-wrapper {
