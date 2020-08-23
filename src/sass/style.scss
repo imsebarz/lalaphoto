@@ -373,9 +373,9 @@ ul {
 
 @media screen and (max-width: 900px) {
   .text {
-    top: 60vh;
-    left: 3%;
+    transform: translateX(1em) translateY(-45vw);
     width: fit-content;
+    position: initial;
     h1 {
       font-size: 9vw;
       width: min-content;
@@ -422,7 +422,7 @@ ul {
     height: 60%;
     top: 35vh;
     .lala {
-      transform: translateX(10vw) translateY(-17vh);
+      transform: translateX(5vw) translateY(-17vh);
     }
   }
 
@@ -436,6 +436,10 @@ ul {
     width: 70vw;
     font-size: 16px;
     left: 10%;
+  }
+
+  .content {
+    height: 100% !important;
   }
 }
 
