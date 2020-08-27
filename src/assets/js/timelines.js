@@ -110,7 +110,16 @@ profileTl
   .to(".swiper-container", 0.5, {
     x: -1200,
   })
-  .to(".text h1", 1, { x: 0, y: -200, ease: Power3.easeInOut }, "-=1")
+  .to(
+    ".text h1",
+    1,
+    {
+      x: 30,
+      y: -250,
+      ease: Power3.easeInOut,
+    },
+    "-=1"
+  )
   .to(
     ".text p",
     0.5,

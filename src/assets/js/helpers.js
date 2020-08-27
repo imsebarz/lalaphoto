@@ -16,6 +16,7 @@ function lalaclick() {
   if (breakpoint.matches) {
     text.style.display = "none";
     clickme.style.display = "none";
+    profiletext.style.display = "none";
   }
 }
 
@@ -70,4 +71,20 @@ navlinks.forEach((link) => {
 const quit = () => {
   window.removeEventListener("click", quit);
   contactTl.reverse().timeScale(4);
+};
+
+const matchList = (tamaño) => {
+  const list = sidemenu.children[0];
+  if (list.childElementCount - 2 > tamaño) {
+    let diferencia = list.childElementCount - tamaño - 2;
+    for (let index = 0; index < diferencia; index++) {
+      list.children[1].remove();
+    }
+  } else {
+    diferencia = tamaño - list.childElementCount + 2;
+    for (let index = 0; index < diferencia; index++) {
+      node = list.children[1].cloneNode(true);
+      list.insertBefore(node, list.children[1]);
+    }
+  }
 };

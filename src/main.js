@@ -2,7 +2,9 @@ lala.addEventListener("click", lalaclick);
 
 // -------------------- logo onClick listener  -----------------------------------
 
-logo.forEach((el) => {
+const logos = [logo, homeside];
+
+logos.forEach((el) => {
   el.addEventListener("click", () => {
     tl.restart().timeScale(1.2);
     if (lalaTl.progress() == 1) {
@@ -22,22 +24,20 @@ logo.forEach((el) => {
   });
 });
 
+backside.addEventListener("click", () => {
+  sidemenu.classList.toggle("open");
+});
+
+contactside.addEventListener("click", () => {
+  sidemenu.classList.add("open");
+  matchList(6);
+});
+
 const portfolios = [navlinks[1], portfolioside];
 
 portfolios.forEach((item) => {
   item.addEventListener("click", lalaclick);
 });
-
-// portfolios.forEach((item) => {
-//   item.addEventListener("click", () => {
-//     navlinks[1].classList.add("navactive");
-//     profileTl.reverse();
-//     lala.addEventListener("click", lalaclick);
-//     lala.addEventListener("mousemove", mousemove);
-//     lala.style.cursor = "none";
-//     clickme.style.display = "flex";
-//   });
-// });
 
 lala.addEventListener("mousemove", mousemove);
 lala.addEventListener("mouseout", (e) => {
@@ -112,11 +112,11 @@ proyectoslinks.forEach((link) => {
 themebutton.forEach((item) => {
   item.addEventListener("click", () => {
     lala.style.transition = "none";
-    logo[0].style.transition = "none";
+    logos[0].style.transition = "none";
     html.classList.toggle("darkmode");
     setTimeout(() => {
       lala.style.transition = "0.5s ease";
-      logo[0].style.transition = "0.4s ease";
+      logos[0].style.transition = "0.4s ease";
     });
   });
 });
