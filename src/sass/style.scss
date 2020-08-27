@@ -342,8 +342,7 @@ ul {
       transform: rotate(0deg);
       transition: transform 300ms ease;
     }
-    span,
-    h1 {
+    span {
       color: black;
       z-index: 20;
     }
@@ -358,6 +357,21 @@ ul {
   height: 100vh;
   flex-direction: column;
   align-items: center;
+  transition: all 0.5s ease;
+}
+
+.sidemenu-nav.contact {
+  display: none;
+}
+
+.sidemenu-nav.projects {
+  display: none;
+  .nav-item {
+    height: 9vh;
+    i {
+      font-size: 6vw;
+    }
+  }
 }
 
 .nav-item {
@@ -385,8 +399,7 @@ ul {
     display: flex;
     justify-content: center;
   }
-  span,
-  h1 {
+  span {
     display: none;
     pointer-events: none;
     margin-left: 1rem;
@@ -396,8 +409,7 @@ ul {
 
 .sidemenu.open {
   width: 50vw;
-  span,
-  h1 {
+  span {
     display: block;
   }
   .logo {

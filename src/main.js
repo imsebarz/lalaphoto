@@ -21,16 +21,46 @@ logos.forEach((el) => {
     navlinks[1].classList.add("navactive");
     navlinks[0].classList.remove("navactive");
     navlinks[2].classList.remove("navactive");
+    sidemenu.classList.remove("open");
   });
 });
 
-backside.addEventListener("click", () => {
-  sidemenu.classList.toggle("open");
+const resetNavBar = () => {
+  sidemenunav.style.display = "flex";
+  sidemenucontact.style.display = "none";
+};
+
+backside.forEach((el) => {
+  el.addEventListener("click", () => {
+    sidemenu.classList.toggle("open");
+    if (sidemenucontact.display == "flex") {
+      resetNavBar();
+    }
+  });
 });
 
 contactside.addEventListener("click", () => {
   sidemenu.classList.add("open");
-  matchList(6);
+  sidemenunav.style.display = "none";
+  sidemenucontact.style.display = "flex";
+});
+
+navBack.forEach((el) => el.addEventListener("click", resetNavBar));
+
+navFacebook.addEventListener("click", () => {
+  window.open("https://www.facebook.com");
+});
+
+navInstagram.addEventListener("click", () => {
+  window.open("https://www.instagram.com");
+});
+
+navBehance.addEventListener("click", () => {
+  window.open("https://www.behance.com");
+});
+
+navMail.addEventListener("click", () => {
+  window.open("mailto:salalazar4@gmail.com");
 });
 
 const portfolios = [navlinks[1], portfolioside];
@@ -74,6 +104,7 @@ profiles.forEach((item) => {
     text.style.display = "block";
     if (breakpoint.matches) {
       text.style.left = "10%";
+      sidemenu.classList.remove("open");
     }
   });
 });
